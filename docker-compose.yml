@@ -1,0 +1,8 @@
+version: '3'
+services:
+  employee_service:
+    image: vstu_oms_employee_service:latest
+    container_name: vstu_oms_employee_service
+    restart: always
+    env_file:
+      - ./.env
