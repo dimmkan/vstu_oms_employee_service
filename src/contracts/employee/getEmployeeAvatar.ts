@@ -1,7 +1,10 @@
+import { IsNumber } from 'class-validator';
+
 export namespace EmployeeGetAvatar {
   export const topic = 'employee.getavatar.query';
 
   export class Request {
+    @IsNumber()
     id: number;
   }
 

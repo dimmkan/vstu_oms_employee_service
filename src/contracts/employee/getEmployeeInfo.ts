@@ -1,7 +1,10 @@
+import { IsNumber } from 'class-validator';
+
 export namespace EmployeeGetInfo {
   export const topic = 'employee.getinfo.query';
 
   export class Request {
+    @IsNumber()
     id: number;
   }
 

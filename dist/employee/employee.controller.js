@@ -21,22 +21,22 @@ let EmployeeController = class EmployeeController {
     constructor(employeeService) {
         this.employeeService = employeeService;
     }
-    async getUserInfo({ id }) {
+    async getEmployeeInfo({ id }) {
         return this.employeeService.getEmployeeInfo(id);
     }
-    async updateUserInfo(dto) {
+    async updateEmployeeInfo(dto) {
         return this.employeeService.updateEmployeeInfo(dto);
     }
-    async getUserAvatar({ id }) {
+    async getEmployeeAvatar({ id }) {
         return this.employeeService.getEmployeeAvatar(id);
     }
-    async setUserAvatar(dto) {
+    async setEmployeeAvatar(dto) {
         return this.employeeService.setEmployeeAvatar(dto);
     }
-    async deleteUserAvatar({ id }) {
+    async deleteEmployeeAvatar({ id }) {
         return this.employeeService.deleteEmployeeAvatar(id);
     }
-    async validateUserEmail({ email }) {
+    async validateEmployeeEmail({ email }) {
         return this.employeeService.validateEmployeeEmail(email);
     }
     async generateRefreshPasswordLink({ email, new_password }) {
@@ -53,7 +53,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [contracts_1.EmployeeGetInfo.Request]),
     __metadata("design:returntype", Promise)
-], EmployeeController.prototype, "getUserInfo", null);
+], EmployeeController.prototype, "getEmployeeInfo", null);
 __decorate([
     (0, nestjs_rmq_1.RMQRoute)(contracts_1.EmployeeUpdateInfo.topic),
     (0, nestjs_rmq_1.RMQValidate)(),
@@ -61,7 +61,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [contracts_1.EmployeeUpdateInfo.Request]),
     __metadata("design:returntype", Promise)
-], EmployeeController.prototype, "updateUserInfo", null);
+], EmployeeController.prototype, "updateEmployeeInfo", null);
 __decorate([
     (0, nestjs_rmq_1.RMQRoute)(contracts_1.EmployeeGetAvatar.topic),
     (0, nestjs_rmq_1.RMQValidate)(),
@@ -69,7 +69,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [contracts_1.EmployeeGetAvatar.Request]),
     __metadata("design:returntype", Promise)
-], EmployeeController.prototype, "getUserAvatar", null);
+], EmployeeController.prototype, "getEmployeeAvatar", null);
 __decorate([
     (0, nestjs_rmq_1.RMQRoute)(contracts_1.EmployeeSetAvatar.topic),
     (0, nestjs_rmq_1.RMQValidate)(),
@@ -77,7 +77,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [contracts_1.EmployeeSetAvatar.Request]),
     __metadata("design:returntype", Promise)
-], EmployeeController.prototype, "setUserAvatar", null);
+], EmployeeController.prototype, "setEmployeeAvatar", null);
 __decorate([
     (0, nestjs_rmq_1.RMQRoute)(contracts_1.EmployeeDeleteAvatar.topic),
     (0, nestjs_rmq_1.RMQValidate)(),
@@ -85,7 +85,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [contracts_1.EmployeeDeleteAvatar.Request]),
     __metadata("design:returntype", Promise)
-], EmployeeController.prototype, "deleteUserAvatar", null);
+], EmployeeController.prototype, "deleteEmployeeAvatar", null);
 __decorate([
     (0, nestjs_rmq_1.RMQRoute)(contracts_1.ValidateEmployeeEmail.topic),
     (0, nestjs_rmq_1.RMQValidate)(),
@@ -93,7 +93,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [contracts_1.ValidateEmployeeEmail.Request]),
     __metadata("design:returntype", Promise)
-], EmployeeController.prototype, "validateUserEmail", null);
+], EmployeeController.prototype, "validateEmployeeEmail", null);
 __decorate([
     (0, nestjs_rmq_1.RMQRoute)(contracts_1.GenerateRefreshPasswordLinkEmployee.topic),
     (0, nestjs_rmq_1.RMQValidate)(),
