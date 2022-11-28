@@ -18,7 +18,7 @@ export class EmployeeController {
 
   @RMQRoute(EmployeeGetInfo.topic)
   @RMQValidate()
-  async getUserInfo(
+  async getEmployeeInfo(
     @Body() { id }: EmployeeGetInfo.Request,
   ): Promise<EmployeeGetInfo.Response> {
     return this.employeeService.getEmployeeInfo(id);
@@ -26,7 +26,7 @@ export class EmployeeController {
 
   @RMQRoute(EmployeeUpdateInfo.topic)
   @RMQValidate()
-  async updateUserInfo(
+  async updateEmployeeInfo(
     @Body() dto: EmployeeUpdateInfo.Request,
   ): Promise<EmployeeUpdateInfo.Response> {
     return this.employeeService.updateEmployeeInfo(dto);
@@ -34,7 +34,7 @@ export class EmployeeController {
 
   @RMQRoute(EmployeeGetAvatar.topic)
   @RMQValidate()
-  async getUserAvatar(
+  async getEmployeeAvatar(
     @Body() { id }: EmployeeGetAvatar.Request,
   ): Promise<EmployeeGetAvatar.Response> {
     return this.employeeService.getEmployeeAvatar(id);
@@ -42,7 +42,7 @@ export class EmployeeController {
 
   @RMQRoute(EmployeeSetAvatar.topic)
   @RMQValidate()
-  async setUserAvatar(
+  async setEmployeeAvatar(
     @Body() dto: EmployeeSetAvatar.Request,
   ): Promise<EmployeeSetAvatar.Response> {
     return this.employeeService.setEmployeeAvatar(dto);
@@ -50,7 +50,7 @@ export class EmployeeController {
 
   @RMQRoute(EmployeeDeleteAvatar.topic)
   @RMQValidate()
-  async deleteUserAvatar(
+  async deleteEmployeeAvatar(
     @Body() { id }: EmployeeDeleteAvatar.Request,
   ): Promise<EmployeeDeleteAvatar.Response> {
     return this.employeeService.deleteEmployeeAvatar(id);
@@ -58,7 +58,7 @@ export class EmployeeController {
 
   @RMQRoute(ValidateEmployeeEmail.topic)
   @RMQValidate()
-  async validateUserEmail(
+  async validateEmployeeEmail(
     @Body() { email }: ValidateEmployeeEmail.Request,
   ): Promise<ValidateEmployeeEmail.Response> {
     return this.employeeService.validateEmployeeEmail(email);

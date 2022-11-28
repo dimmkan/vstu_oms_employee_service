@@ -13,11 +13,13 @@ const nestjs_rmq_1 = require("nestjs-rmq");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const rmq_config_1 = require("./configs/rmq.config");
+const employee_module_1 = require("./employee/employee.module");
+const mailer_module_1 = require("./mailer/mailer.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [config_1.ConfigModule.forRoot(), nestjs_rmq_1.RMQModule.forRootAsync((0, rmq_config_1.getRMQConfig)())],
+        imports: [config_1.ConfigModule.forRoot(), nestjs_rmq_1.RMQModule.forRootAsync((0, rmq_config_1.getRMQConfig)()), employee_module_1.EmployeeModule, mailer_module_1.MailerModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

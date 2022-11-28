@@ -114,7 +114,7 @@ export class EmployeeService {
       return { avatar_id: result.avatar };
     } else {
       const result = await employee_avatar_collection.createOne({
-        user_id: dto.id,
+        employee_id: dto.id,
         avatar: fileId,
       });
       return { avatar_id: result.avatar };
